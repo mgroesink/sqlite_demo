@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          title: Text('Autokilometers - Flutter SQLite Tutorial'),
+          title: Text('Studenten - Flutter SQLite Tutorial'),
         ),
         body: TabBarView(
           children: [
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       controller: idController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Kenteken',
+                        labelText: 'Studentnummer',
                       ),
                     ),
                   ),
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       controller: nameController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Merk',
+                        labelText: 'Naam',
                       ),
                     ),
                   ),
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       controller: classController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Kilometers',
+                        labelText: 'Klas',
                       ),
                     ),
                   ),
