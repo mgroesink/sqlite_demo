@@ -6,9 +6,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Auto-kilometers - Flutter',
+      title: 'Student Registratie Systeem',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.orange,
       ),
       home: MyHomePage(),
     );
@@ -22,17 +22,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   //controllers used in insert operation UI
-  TextEditingController brandController = TextEditingController();
-  TextEditingController licenseController = TextEditingController();
-  TextEditingController kmController = TextEditingController();
+  TextEditingController idController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+  TextEditingController classController = TextEditingController();
 
   //controllers used in update operation UI
-  TextEditingController licenseUpdateController = TextEditingController();
-  TextEditingController brandUpdateController = TextEditingController();
-  TextEditingController kmUpdateController = TextEditingController();
+  TextEditingController idUpdateController = TextEditingController();
+  TextEditingController nameUpdateController = TextEditingController();
+  TextEditingController classUpdateController = TextEditingController();
 
   //controllers used in delete operation UI
-  TextEditingController licenseDeleteController = TextEditingController();
+  TextEditingController idDeleteController = TextEditingController();
 
   //controllers used in query operation UI
   TextEditingController queryController = TextEditingController();
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      controller: licenseController,
+                      controller: idController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Kenteken',
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      controller: brandController,
+                      controller: nameController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Merk',
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      controller: kmController,
+                      controller: classController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Kilometers',
@@ -111,15 +111,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextButton(
                     child: Text('Toevoegen'),
                     onPressed: () {
-                      //TODO: Insert car
+                      //TODO: Nieuwe student toevoegen
                     },
                   ),
                 ],
               ),
             ),
             Container(
-                //TODO: Add listview for all cars
-                child: Text('Alle auto\'s')),
+                //TODO: Overzicht alle studenten
+                child: Text('Alle studenten')),
             Center(
               child: Column(
                 children: <Widget>[
@@ -129,16 +129,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       controller: queryController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Merk',
+                        labelText: 'Studentnummer',
                       ),
                       onChanged: (text) {
-                        if (text.length >= 2) {
+                        if (text.length >= 1) {
                           setState(() {
-                            //TODO:
+                            //TODO: Studentgegevens ophalen
                           });
                         } else {
                           setState(() {
-                            //TODO://
+                            //TODO: Lijst leegmaken
                           });
                         }
                       },
@@ -157,35 +157,35 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      controller: licenseUpdateController,
+                      controller: idUpdateController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Kenteken',
+                        labelText: 'Studentnummer',
                       ),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      controller: brandUpdateController,
+                      controller: nameUpdateController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Merk',
+                        labelText: 'Naam',
                       ),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      controller: kmUpdateController,
+                      controller: classUpdateController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Kilometers',
+                        labelText: 'Klas',
                       ),
                     ),
                   ),
                   TextButton(
-                    child: Text('Auto gegevens wijzigen'),
+                    child: Text('Studentgegevens wijzigen'),
                     onPressed: () {
                       //TODO: Wijzigingen opslaan
                     },
@@ -199,17 +199,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      controller: licenseDeleteController,
+                      controller: idDeleteController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Kenteken',
+                        labelText: 'Studentnummer',
                       ),
                     ),
                   ),
                   TextButton(
                     child: Text('Wis'),
                     onPressed: () {
-                      int id = int.parse(licenseDeleteController.text);
+                      int id = int.parse(idDeleteController.text);
                       //TODO: Verwijderen
                     },
                   ),
